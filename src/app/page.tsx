@@ -1,112 +1,163 @@
+"use client";
 import Image from "next/image";
+import Navbar from "./component/navbar";
+import BlurBg from "./component/blurbg";
+import { IoLogoLinkedin, IoArrowDown, IoLogoGithub } from "react-icons/io5";
+import { UnderLine, UnderLineLg } from "./component/hr";
+import { useRef } from "react";
+import TechCard from "./component/tech_card";
 
 export default function Home() {
+  const aboutRef = useRef<null | HTMLDivElement>(null);
+
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <main className="flex min-h-screen flex-col relative px-8 lg:px-28 mt-8 overflow-x-hidden mb-10">
+      <Navbar />
+      <BlurBg background="#A469FC" pxBlur="100" x="300" y="200" />
+      <BlurBg background="#FC6969" pxBlur="80" x="1400" y="200" />
+      <Image
+        src="/assets/img/profile.png"
+        width={400}
+        height={200}
+        className="absolute right-0 animate-fade-left duration-500 hidden lg:flex top-24"
+        alt="Picture of the author"
+      />
+      <div className="mt-32 animate-fade-right duration-500 flex relative font-bold flex-col text-[60px] leading-snug">
+        RICKY <br />
+        TRIYOGA <br />
+        WARDHANA <br />
+        <p className="text-base font-medium px-2">
+          Full Stack Developer Enthusiast
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+        <div className="icon flex space-x-4 py-8 px-4">
+          <a href="">
+            <IoLogoLinkedin className="w-[40px] shadow cursor-pointer hover:text-slate-400  h-[40px]"></IoLogoLinkedin>
+          </a>
+          <a href="">
+            <IoLogoGithub className="w-[40px] shadow cursor-pointer hover:text-slate-400 h-[40px]"></IoLogoGithub>
+          </a>
+
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href=""
+            className="border-white border-2 rounded shadow cursor-pointer hover:text-slate-400 hover:border-slate-400 text-sm px-2 py-2"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            CV
           </a>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        <div className="w-full flex flex-col relative justify-center">
+          <div
+            className="flex flex-col w-fit absolute left-1/2 top-10  animate-bounce animate-infinite cursor-pointer hover:opacity-60 transition-opacity text-2xl items-center"
+            onClick={scrollToAbout}
+          >
+            Down
+            <IoArrowDown className=" text-[60px]"></IoArrowDown>
+          </div>
+        </div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/assets/img/fox.png"
+          width={200}
+          height={123}
+          className="absolute -z-10 left-52 top-10"
+          alt="Picture of the author"
         />
       </div>
+      <div className=" flex flex-col mt-36" ref={aboutRef}>
+        <h3 className="text-[46px]  font-bold py-0"> About</h3>
+        <UnderLine />
+        <div className="py-4 text-justify text-[#E5E5E5]">
+          My Name Is <b>Ricky Triyoga Wardhana</b> an Informathics Engineering
+          Student From <b>University Of Muhammadiyah Malang</b>, I live and born
+          in
+          <b>Jombang</b>, and now I am <b>21 years old</b>. Having been
+          interested in the world of programming since I was in middle school
+          until now, I am determined to continue to deepen my knowledge about
+          programming. With the learning by doing method that I use, I am
+          dedicated to creating a new application that aims to improve my{" "}
+          <b>personal and interpersonal qualities</b>. I always like to invite
+          people around me to do things similar to me, this makes me have a{" "}
+          <b>leadership</b> spirit because I always guide my peers to build
+          their projects. I enjoy deepening all my knowledge about programming,
+          such as{" "}
+          <b>
+            Front End Developer, Back End Developer and becoming a Cloud
+            Engineer
+          </b>
+          , starting from{" "}
+          <b>Mobile Apps platforms, Websites Apps and Desktop Applications</b>.
+          This makes me highly dedicated to becoming a{" "}
+          <b>Full Stack Developer</b>.
+        </div>
+      </div>
+      <div className=" flex flex-col mt-16 relative" ref={aboutRef}>
+        <h3 className="text-[46px]  font-bold py-0"> Tech Skills</h3>
+        <UnderLineLg />
+        <div className="w-full relative flex justify-center text-lg mb-4 overflow-hidden">
+          <span className="w-32 h-8 absolute bg-cyan-800 blur-xl "></span>
+          <h3 className="backdrop-blur-none">Frame Work</h3>
+        </div>
+        <BlurBg background="#52EFEF" pxBlur="100" x="120" y="40" />
+        <div className="flex justify-end items-center w-full">
+          <div className="py-4 grid grid-cols-2 lg:grid-cols-4 w-full px-4 lg:px-12 mb-12">
+            {[...Array(12)].map((x, i) => (
+              <TechCard count={(i + 1).toString()} key={i} />
+            ))}
+          </div>
+        </div>
+        <div className="w-full relative flex justify-center text-lg mb-4 overflow-hidden">
+          <span className="w-32 h-8 absolute bg-cyan-800 blur-xl "></span>
+          <h3 className="backdrop-blur-none">Programming Language</h3>
+        </div>
+      </div>
+      <div className="flex justify-end items-center w-full mb-32">
+        <div className="py-4 grid grid-cols-2 lg:grid-cols-4 w-full px-4 lg:px-12 mb-12">
+          {[...Array(6)].map((x, i) => (
+            <TechCard count={`p_${(i + 1).toString()}`} key={i} />
+          ))}
+        </div>
+      </div>
+      <div className="w-screen h-screen absolute -z-10  bottom-0 overflow-hidden">
+        <BlurBg background="#C2BD47" pxBlur="100" x="800" y="200" />
+      </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className=" justify-center items-center flex flex-col z-10 lg:px-48 text-center ">
+        <p className="text-[#D4CECE] ">
+          {" "}
+          Designed in{" "}
+          <a
+            className="hover:text-white"
+            href="https://www.figma.com/design/VPllrhKIQCEmAyqls4ARGC/Untitled?node-id=0-1&t=3vK120MutGEUhegV-1"
+          >
+            <b>Figma</b>
+          </a>{" "}
+          for a visually appealing and modern user experience. Built with
+          <a href="" className="hover:text-white font-bold">
+            JavaScript and TypeScript
+          </a>{" "}
+          for a robust and scalable foundation. Powered by{" "}
+          <a href="https://nextjs.org/" className="hover:text-white font-bold">
+            Next.js
+          </a>{" "}
+          Framework for efficient server-side rendering and performance
+          optimization. Styled with{" "}
+          <a
+            href="https://tailwindcss.com/"
+            className="font-bold hover:text-white"
+          >
+            Tailwind CSS
+          </a>{" "}
+          for a utility-first approach to clean and responsive design. Deployed
+          with{" "}
+          <a href="" className="font-bold hover:text-white">
+            Vercel
+          </a>{" "}
+          for effortless deployment and global edge distribution.
+        </p>
       </div>
     </main>
   );
