@@ -6,6 +6,8 @@ import Navbar from "../component/navbar";
 import BlurBg from "../component/blurbg";
 import { IoLogoLinkedin, IoArrowDown, IoLogoGithub } from "react-icons/io5";
 import { useRef } from "react";
+import ProjectCard from "./component/projectcard";
+import TechCard from "./component/techcard";
 
 interface Quote {
   content: string;
@@ -49,6 +51,44 @@ export default function Home() {
             className="absolute -z-10 right-36 -top-16"
             alt="Picture of the author"
           />
+        </div>
+        {/* CARD */}
+        <div className="grid grid-cols-1 w-full h-full lg:grid-cols-3 mt-16 lg:px-32 mb-10">
+          <div className="h-full w-full flex justify-center items-center">
+            <ProjectCard
+              tech={[
+                "Code Igniter 4",
+                "Kotlin",
+                "Python Flask",
+                "Google Cloud",
+                "Jetpack Compose",
+              ]}
+              device={"mobile"}
+              title="Hi Service"
+              subtitle="Bangkit Capstone"
+              linkImg="hiservice.gif"
+              linkGithub="https://github.com/hi-service"
+              linkYoutube="https://youtu.be/7JtyW6uldpo"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 lg:mt-0 items-center">
+            <ProjectCard
+              tech={["Laravel 8", "PHP", "Bootstrap"]}
+              device={"web"}
+              title="Sistem Monitoring Train Set"
+              subtitle="MSIB PT Inka"
+              linkImg="trainset.png"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 lg:mt-0 items-center">
+            <ProjectCard
+              tech={["Laravel 11", "PHP", "Tailwind CSS", "Next JS"]}
+              device={"web"}
+              title="UJM E-Catalogue"
+              subtitle="Free Lance"
+              linkImg="trainset.png"
+            ></ProjectCard>
+          </div>
         </div>
       </main>
     </>

@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full flex justify-between items-center sticky">
+      <div className="w-full flex justify-between items-center z-50 sticky top-0">
         <div className="logo -z-0 font-semibold flex text-2xl justify-center cursor-default items-center">
           RicWrdhna <span className="text-black bg-white px-2 ms-1 ">Dev</span>
         </div>
@@ -52,6 +52,14 @@ const Navbar = () => {
               } ext-3xl relative after:bg-white after:rounded after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
             >
               <li>Experiences</li>
+            </a>
+            <a
+              href="/contact-me"
+              className={`${
+                pathname == "/contact-me" ? "after:h-1 after:w-full " : ""
+              } ext-3xl relative after:bg-white after:rounded after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
+            >
+              <li>Contact</li>
             </a>
           </ul>
         </div>

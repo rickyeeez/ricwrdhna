@@ -190,6 +190,7 @@ export default function Home() {
             </a>{" "}
             for effortless deployment and global edge distribution.
           </p>
+          <p className="py-2">© 2024, Ricky Triyoga Wardhana</p>
         </div>
       </main>
     </>
