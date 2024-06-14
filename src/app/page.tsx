@@ -6,7 +6,7 @@ import Navbar from "./component/navbar";
 import BlurBg from "./component/blurbg";
 import { IoLogoLinkedin, IoArrowDown, IoLogoGithub } from "react-icons/io5";
 import { UnderLine, UnderLineLg } from "./component/hr";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import TechCard from "./component/tech_card";
 import fetcher from "./util/fetcher";
 
@@ -16,12 +16,16 @@ interface Quote {
 }
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
-  const [quote, setQuote] = useState<Quote>();
   const { data, error, isLoading } = useSWR<Quote>(
     "https://api.quotable.io/random",
-    fetcher
+    fetcher,
+    {
+      refreshInterval: 60000,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateOnMount: true,
+    }
   );
-  useEffect(() => setQuote(data));
   const scrollToAbout = () => {
     if (aboutRef.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -71,7 +75,7 @@ export default function Home() {
           <p>Failed to load quote</p>
         ) : (
           <p className="text-start text-base italic font-medium text-slate-300">
-            "{quote?.content}" - {quote?.authorSlug}
+            "{data?.content}" - {data?.authorSlug}
           </p>
         )}
         <div className="w-full flex flex-col relative justify-center">
