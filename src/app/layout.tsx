@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`bg-[#221e1e] h-full w-full ${outfit.className} text-white`}
       >
+        <SpeedInsights />
         {children}
       </body>
     </html>
