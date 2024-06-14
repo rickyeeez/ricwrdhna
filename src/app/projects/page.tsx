@@ -86,7 +86,7 @@ export default function Home() {
               device={"web"}
               title="UJM E-Catalogue"
               subtitle="Free Lance"
-              linkImg="trainset.png"
+              linkImg="ujm.png"
             ></ProjectCard>
           </div>
         </div>
