@@ -8,7 +8,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   const closeMenu = () => {
