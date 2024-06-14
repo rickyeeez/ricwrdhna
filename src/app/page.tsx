@@ -1,15 +1,27 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
+import useSWR from "swr";
 import Image from "next/image";
 import Navbar from "./component/navbar";
 import BlurBg from "./component/blurbg";
 import { IoLogoLinkedin, IoArrowDown, IoLogoGithub } from "react-icons/io5";
 import { UnderLine, UnderLineLg } from "./component/hr";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import TechCard from "./component/tech_card";
+import fetcher from "./util/fetcher";
 
+interface Quote {
+  content: string;
+  authorSlug: string;
+}
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
-
+  const [quote, setQuote] = useState<Quote>();
+  const { data, error, isLoading } = useSWR<Quote>(
+    "https://api.quotable.io/random",
+    fetcher
+  );
+  useEffect(() => setQuote(data));
   const scrollToAbout = () => {
     if (aboutRef.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -36,20 +48,32 @@ export default function Home() {
           Full Stack Developer Enthusiast
         </p>
         <div className="icon flex space-x-4 py-8 px-4">
-          <a href="">
+          <a href="https://www.linkedin.com/in/rickyeeez/" target="_blank">
             <IoLogoLinkedin className="w-[40px] shadow cursor-pointer hover:text-slate-400  h-[40px]"></IoLogoLinkedin>
           </a>
-          <a href="">
+          <a href="https://github.com/rickyeeez" target="_blank">
             <IoLogoGithub className="w-[40px] shadow cursor-pointer hover:text-slate-400 h-[40px]"></IoLogoGithub>
           </a>
 
           <a
-            href=""
+            href="/cv"
+            target="_blank"
             className="border-white border-2 rounded shadow cursor-pointer hover:text-slate-400 hover:border-slate-400 text-sm px-2 py-2"
           >
             CV
           </a>
         </div>
+        {isLoading ? (
+          <p className="text-start text-base italic font-medium text-slate-300">
+            Loading quote....
+          </p>
+        ) : error ? (
+          <p>Failed to load quote</p>
+        ) : (
+          <p className="text-start text-base italic font-medium text-slate-300">
+            "{quote?.content}" - {quote?.authorSlug}
+          </p>
+        )}
         <div className="w-full flex flex-col relative justify-center">
           <div
             className="flex flex-col w-fit absolute left-1/2 top-10  animate-bounce animate-infinite cursor-pointer hover:opacity-60 transition-opacity text-2xl items-center"
@@ -94,7 +118,7 @@ export default function Home() {
           <b>Full Stack Developer</b>.
         </div>
       </div>
-      <div className=" flex flex-col mt-16 relative" ref={aboutRef}>
+      <div className=" flex flex-col mt-16 relative">
         <h3 className="text-[46px]  font-bold py-0"> Tech Skills</h3>
         <UnderLineLg />
         <div className="w-full relative flex justify-center text-lg mb-4 overflow-hidden">
