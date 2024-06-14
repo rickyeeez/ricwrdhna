@@ -87,6 +87,7 @@ export default function Home() {
               title="UJM E-Catalogue"
               subtitle="Free Lance"
               linkImg="ujm.png"
+              linkDefault="https://ujm-website-8kmz.vercel.app/"
             ></ProjectCard>
           </div>
         </div>
