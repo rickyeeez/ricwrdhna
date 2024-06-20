@@ -20,6 +20,7 @@ export default function Home() {
         <Navbar />
         <BlurBg background="#A469FC" pxBlur="100" x="300" y="200" />
         <BlurBg background="#FC6969" pxBlur="80" x="1400" y="200" />
+        <BlurBg background="#00FFFF" pxBlur="160" x="100" y="800" />
         <div className="mt-32 animate-fade-right duration-500 flex relative justify-center items-center w-full font-bold flex-col text-[60px] leading-snug">
           RICKY TRIYOGA WARDHANA
           <p className="text-base font-medium px-2">
@@ -90,6 +91,84 @@ export default function Home() {
               linkDefault="https://ujm-website-8kmz.vercel.app/"
             ></ProjectCard>
           </div>
+          <div className="h-full w-full flex justify-center mt-4 items-center">
+            <ProjectCard
+              tech={["Next JS", "postgresql", "Tailwind CSS", "Vercel App"]}
+              device={"web"}
+              title="To Do App"
+              subtitle="Personal Project"
+              linkImg="todo.png"
+              linkDefault="https://to-do-app-list-using-next-js.vercel.app/"
+              linkGithub="https://github.com/rickyeeez/To-Do-App-List-Using-Next-JS"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 items-center">
+            <ProjectCard
+              tech={["Laravel 11", "MySQL", "Tailwind CSS"]}
+              device={"web"}
+              title="Website CBT Sertifikasi K3s"
+              subtitle="Free lance"
+              linkImg="cbt.png"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 items-center">
+            <ProjectCard
+              tech={["Flutter", "Dart"]}
+              device={"mobile"}
+              title=" PPDIKTI Data Scrapper"
+              subtitle="Personal Project"
+              linkImg="ppdikti.png"
+              linkGithub="https://github.com/rickyeeez/Flutter-PPDIKTI-API"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 items-center">
+            <ProjectCard
+              tech={["Laravel 9", "PHP", "Tailwind CSS"]}
+              device={"web"}
+              title="Teknokreasi UMKM Dadaprejo"
+              subtitle="Freelance"
+              linkImg="umkmdadaprejo.png"
+              linkDefault="https://umkmdadaprejo.com/"
+            ></ProjectCard>
+          </div>
+        </div>
+        <div className=" justify-center items-center flex flex-col z-10 lg:px-48 text-center ">
+          <p className="text-[#D4CECE] ">
+            {" "}
+            Designed in{" "}
+            <a
+              className="hover:text-white"
+              href="https://www.figma.com/design/VPllrhKIQCEmAyqls4ARGC/Untitled?node-id=0-1&t=3vK120MutGEUhegV-1"
+            >
+              <b>Figma</b>
+            </a>{" "}
+            for a visually appealing and modern user experience. Built with{" "}
+            <a href="" className="hover:text-white font-bold">
+              JavaScript and TypeScript
+            </a>{" "}
+            for a robust and scalable foundation. Powered by{" "}
+            <a
+              href="https://nextjs.org/"
+              className="hover:text-white font-bold"
+            >
+              Next.js
+            </a>{" "}
+            Framework for efficient server-side rendering and performance
+            optimization. Styled with{" "}
+            <a
+              href="https://tailwindcss.com/"
+              className="font-bold hover:text-white"
+            >
+              Tailwind CSS
+            </a>{" "}
+            for a utility-first approach to clean and responsive design.
+            Deployed with{" "}
+            <a href="" className="font-bold hover:text-white">
+              Vercel
+            </a>{" "}
+            for effortless deployment and global edge distribution.
+          </p>
+          <p className="py-2">© 2024, Ricky Triyoga Wardhana</p>
         </div>
       </main>
     </>

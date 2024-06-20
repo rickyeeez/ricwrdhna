@@ -56,6 +56,7 @@ const ProjectCard = (props: Props) => {
           src={`/assets/projects_img/${props.linkImg}`}
           width={1200}
           height={700}
+          quality={100}
           className="object-contain h-40 w-full rounded px-4"
           alt="Picture Logo"
         />
