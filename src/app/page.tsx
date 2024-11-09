@@ -10,29 +10,16 @@ import { useRef } from "react";
 import TechCard from "./component/tech_card";
 import fetcher from "./util/fetcher";
 
-export interface ItemsData {
-  qotd_date: Date;
-  quote: Quote;
-}
-
 export interface Quote {
-  id: number;
-  dialogue: boolean;
-  private: boolean;
-  tags: string[];
-  url: string;
-  favorites_count: number;
-  upvotes_count: number;
-  downvotes_count: number;
-  author: string;
-  author_permalink: string;
-  body: string;
+  q: string;
+  a: string;
+  h: string;
 }
 
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
-  const { data, error, isLoading } = useSWR<ItemsData>(
-    "https://favqs.com/api/qotd",
+  const { data, error, isLoading } = useSWR<Quote>(
+    "https://zenquotes.io/api/random",
     fetcher,
     {
       revalidateOnFocus: false,
@@ -90,7 +77,7 @@ export default function Home() {
             <p>Failed to load quote</p>
           ) : (
             <p className="text-start text-base italic font-medium text-slate-300">
-              "{data?.quote.body}" - {data?.quote.author}
+              "{data?.q}" - {data?.a}
             </p>
           )}
           <div className="w-full flex flex-col relative justify-center">
