@@ -17,7 +17,7 @@ interface Quote {
 
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
-  const { data, error, isLoading } = useSWR<Quote>(
+  const { data, error, isLoading } = useSWR<Quote[]>(
     "https://strangerthingsquotes.shadowdev.xyz/api/quotes",
     fetcher,
     {
@@ -74,10 +74,12 @@ export default function Home() {
             </p>
           ) : error ? (
             <p>Failed to load quote</p>
-          ) : (
+          ) : data && data.length > 0 ? (
             <p className="text-start text-base italic font-medium text-slate-300">
-              "{data?.quote}" - {data?.author}
+              "{data[0].quote}" - {data[0].author}
             </p>
+          ) : (
+            <p>No quote available</p>
           )}
           <div className="w-full flex flex-col relative justify-center">
             <div
