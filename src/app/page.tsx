@@ -10,16 +10,15 @@ import { useRef } from "react";
 import TechCard from "./component/tech_card";
 import fetcher from "./util/fetcher";
 
-export interface Quote {
-  q: string;
-  a: string;
-  h: string;
+interface Quote {
+  quote: string;
+  author: string;
 }
 
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
   const { data, error, isLoading } = useSWR<Quote>(
-    "https://zenquotes.io/api/random",
+    "https://strangerthingsquotes.shadowdev.xyz/api/quotes",
     fetcher,
     {
       revalidateOnFocus: false,
@@ -77,7 +76,7 @@ export default function Home() {
             <p>Failed to load quote</p>
           ) : (
             <p className="text-start text-base italic font-medium text-slate-300">
-              "{data?.q}" - {data?.a}
+              "{data?.quote}" - {data?.author}
             </p>
           )}
           <div className="w-full flex flex-col relative justify-center">
