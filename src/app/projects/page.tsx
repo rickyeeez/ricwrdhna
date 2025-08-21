@@ -83,10 +83,19 @@ export default function Home() {
           </div>
           <div className="h-full w-full flex justify-center mt-4 lg:mt-0 items-center">
             <ProjectCard
+              tech={["Laravel 11", "PHP", "Tailwind CSS"]}
+              device={"web"}
+              title="Point of Sale Unggul Jaya Motor"
+              subtitle="Freelance"
+              linkImg="ujm_pos.png"
+            ></ProjectCard>
+          </div>
+          <div className="h-full w-full flex justify-center mt-4 lg:mt-0 items-center">
+            <ProjectCard
               tech={["Laravel 11", "PHP", "Tailwind CSS", "Next JS"]}
               device={"web"}
               title="UJM E-Catalogue"
-              subtitle="Free Lance"
+              subtitle="Freelance"
               linkImg="ujm.png"
               linkDefault="https://ujm-website-8kmz.vercel.app/"
             ></ProjectCard>
@@ -106,8 +115,8 @@ export default function Home() {
             <ProjectCard
               tech={["Laravel 11", "MySQL", "Tailwind CSS"]}
               device={"web"}
-              title="Website CBT Sertifikasi K3s"
-              subtitle="Free lance"
+              title="Website CBT Sertifikasi K3S"
+              subtitle="Freelance"
               linkImg="cbt.png"
             ></ProjectCard>
           </div>
