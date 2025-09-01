@@ -4,7 +4,12 @@ import useSWR from "swr";
 import Image from "next/image";
 import Navbar from "./component/navbar";
 import BlurBg from "./component/blurbg";
-import { IoLogoLinkedin, IoArrowDown, IoLogoGithub } from "react-icons/io5";
+import {
+  IoLogoLinkedin,
+  IoArrowDown,
+  IoLogoGithub,
+  IoLogoWhatsapp,
+} from "react-icons/io5";
 import { UnderLine, UnderLineLg } from "./component/hr";
 import { useRef } from "react";
 import TechCard from "./component/tech_card";
@@ -58,6 +63,9 @@ export default function Home() {
             </a>
             <a href="https://github.com/rickyeeez" target="_blank">
               <IoLogoGithub className="w-[40px] shadow cursor-pointer hover:text-slate-400 h-[40px]"></IoLogoGithub>
+            </a>
+            <a href="https://wa.me/6282131029815" target="_blank">
+              <IoLogoWhatsapp className="w-[40px] shadow cursor-pointer hover:text-slate-400 h-[40px]"></IoLogoWhatsapp>
             </a>
 
             <a

@@ -53,14 +53,14 @@ const Navbar = () => {
             >
               <li>Experiences</li>
             </a>
-            <a
+            {/* <a
               href="/contact-me"
               className={`${
                 pathname == "/contact-me" ? "after:h-1 after:w-full " : ""
               } ext-3xl relative after:bg-white after:rounded after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
             >
               <li>Contact</li>
-            </a>
+            </a> */}
           </ul>
         </div>
         <div className="lg:flex hidden justify-center items-center">
