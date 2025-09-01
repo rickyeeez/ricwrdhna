@@ -50,7 +50,7 @@ export default function Home() {
           TRIYOGA <br />
           WARDHANA <br />
           <p className="text-base font-medium px-2">
-            Full Stack Developer Enthusiast
+            Full Stack Developer & Mobile Developer Enthusiast
           </p>
           <div className="icon flex space-x-4 py-8 px-4">
             <a href="https://www.linkedin.com/in/rickyeeez/" target="_blank">
@@ -103,9 +103,9 @@ export default function Home() {
           <UnderLine />
           <div className="py-4 text-justify text-[#E5E5E5]">
             My Name Is <b>Ricky Triyoga Wardhana</b> an Informathics Engineering
-            Student From <b>University Of Muhammadiyah Malang</b>, I live and
-            born in
-            <b>Jombang</b>, and now I am <b>21 years old</b>. Having been
+            Fresh Graduate From <b>University Of Muhammadiyah Malang</b>, I live
+            and born in
+            <b> Jombang</b>, and now I am <b>21 years old</b>. Having been
             interested in the world of programming since I was in middle school
             until now, I am determined to continue to deepen my knowledge about
             programming. With the learning by doing method that I use, I am

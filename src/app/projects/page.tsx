@@ -24,7 +24,7 @@ export default function Home() {
         <div className="mt-32 animate-fade-right duration-500 flex relative justify-center items-center w-full font-bold flex-col text-[60px] leading-snug">
           RICKY TRIYOGA WARDHANA
           <p className="text-base font-medium px-2">
-            Full Stack Developer Enthusiast
+            Full Stack Developer & Mobile Developer Enthusiast
           </p>
           <div className="icon flex space-x-4 py-8 px-4">
             <a href="https://www.linkedin.com/in/rickyeeez/" target="_blank">

@@ -5,7 +5,7 @@ type Props = {};
 
 const page = (props: Props) => {
   return redirect(
-    "https://drive.google.com/file/d/13jBd0Imf-Q7gnqBgm9IyIsEbjBle230-/view?usp=sharing"
+    "https://drive.google.com/file/d/1S3kgWcqdg9vIvlSh7e2bFRo_4kBsCiQV/view?usp=sharing"
   );
 };
 
